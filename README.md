@@ -1,4 +1,4 @@
-## Node Express Typescript Prisma Boilerplate
+## Node Express Typescript Prisma
 
 🦄 Starter template for your Express Prisma MySQL API
 
