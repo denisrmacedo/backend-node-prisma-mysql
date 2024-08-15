@@ -4,21 +4,24 @@ import express, { Request, Response } from 'express';
 const app = express();
 app.use(express.json());
 
-// 🏚️ Default Route
+// Default Route
 // This is the Default Route of the API
 app.get('/', async (req: Request, res: Response) => {
-    res.json({ message: 'Hello from Express Prisma Boilerplate!' });
+    res.json({ message: 'Hello API!!!' });
 });
 
 // Create new user
 // This is the Route for creating a new user via POST Method
 app.post('/users', async (req: Request, res: Response) => {
-    //get name and email from the request body
-    const { name, email } = req.body;
+    //get name, email, password end departmant from the request body
+    const { name, email, password, department} = req.body;
     const user = await prisma.user.create({ 
         data: {
             name: String(name),
             email: String(email),
+            password: String(password),
+            department: String(department),
+            role: "usuario",
             status: "active"
         }
     });
